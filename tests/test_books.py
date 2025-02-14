@@ -8,7 +8,7 @@ def test_get_all_books():
 
 
 def test_get_single_book():
-    response = client.get("/books/1")
+    response = client.get("/api/v1/books/1")
     assert response.status_code == 200
     data = response.json()
     assert data["title"] == "The Hobbit"
@@ -50,3 +50,8 @@ def test_delete_book():
 
     response = client.get("/books/3")
     assert response.status_code == 404
+
+def test_get_non_existent_book():
+    response = client.get("/api/v1/books/100")  # A non-existing book ID
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Book not found"}
