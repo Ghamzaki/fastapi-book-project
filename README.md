@@ -129,6 +129,10 @@ The API includes proper error handling for:
 - Invalid genre types
 - Malformed requests
 
+## collaborator
+
+hng12-devbot
+
 ## Contributing
 
 1. Fork the repository
